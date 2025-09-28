@@ -3,12 +3,13 @@ from locators import *
 from data import *
 from selenium.webdriver.support.wait import WebDriverWait as Wait
 from selenium.webdriver.support import expected_conditions as EC
+from helpers import *
 
 
 class TestSignUp:
 
     # Регистрация пользователя
-    def test_signup_success(self, driver, email_generator):
+    def test_signup_success(self, driver):
         driver.get(url)
         # Нажать кнопку «Вход и регистрация».
         driver.find_element(*SIGN_UP_BUTTON).click()
@@ -47,7 +48,7 @@ class TestSignUp:
         assert driver.find_element(*ERROR_MESSAGE_EMAIL_INPUT).text == "Ошибка"
 
     # Регистрация пользователя c email не по маске  *******@*******.***
-    def test_signup_with_invalid_email(self, driver, wrong_email_generator):
+    def test_signup_with_invalid_email(self, driver):
         driver.get(url)
         # Нажать кнопку «Вход и регистрация».
         driver.find_element(*SIGN_UP_BUTTON).click()

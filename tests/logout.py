@@ -9,10 +9,8 @@ class TestLogout:
 
     # Logout пользователя
     def test_logout_success(self, driver):
-        driver.get("https://qa-desk.stand.praktikum-services.ru")
         # Авторизоваться под заранее созданным пользователем.
         driver.get(url)
-        # Нажать кнопку «Вход и регистрация».
         driver.find_element(*SIGN_UP_BUTTON).click()
         # Заполнить все поля формы авторизации и нажать кнопку «Войти».
         Wait(driver, 3).until(EC.visibility_of_element_located(LOGIN_EMAIL_INPUT))

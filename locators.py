@@ -1,4 +1,5 @@
 from selenium.webdriver.common.by import By
+from data import *
 
 # Вход и регистрация
 SIGN_UP_BUTTON = (
@@ -52,6 +53,5 @@ PRODUCT_STATUS = (
     "//div[contains(@class, 'radioUnput_inputRegular')]",
 )  # Состояние товара Б/У
 POST_BUTTON = (By.XPATH, "//button[text()='Опубликовать']")  # Кнопка "Опубликовать"
-# USERS_PRODUCT_NAME_= By.XPATH, "//h2[text()='']" # Название объявления в разделе "Мои объявления"
-MY_POSTS = (By.CLASS_NAME, "profile_profile__bixlA")  # мои объявления
-POST = (By.XPATH, "//*[@class='about']/h2")
+MY_POSTS = (By.CLASS_NAME, "profile_profile__bixlA")  # Мои объявления
+POST = (By.XPATH, f'//h2[text()="{product_name}"]')
